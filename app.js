@@ -30,7 +30,7 @@ app.post('/', (req, res) => {
   if (userMemberData) {
     res.render('welcome', { userMemberData: userMemberData })
   } else {
-    res.render('index', { error: error })
+    res.render('index', { inputMemberData: inputMemberData, error: error })
   }
 
 })
