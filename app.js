@@ -23,12 +23,15 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
 
-  if (toCheckmembership(req.body)) {
-    console.log('他是我們的會員啦！')
+  const inputMemberData = req.body
+  const userMemberData = toCheckmembership(inputMemberData)
+  const error = "Username/Password錯誤"
+
+  if (userMemberData) {
+    res.render('welcome', { userMemberData: userMemberData })
   } else {
-    console.log('他不是我們的會員啦！')
+    res.render('index', { error: error })
   }
-  res.render('index')
 
 })
 

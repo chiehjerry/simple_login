@@ -34,7 +34,7 @@ function toCheckmembership(inputMember) {
 
   const isMember = users.find(user => (user.email === inputMember.email) && (user.password === inputMember.password))
   if (isMember) {
-    return true
+    return isMember
   } else {
     return false
   }

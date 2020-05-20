@@ -16,6 +16,11 @@
               <label for="InputPassword1">使用者密碼</label>
               <input type="password" class="form-control" id="InputPassword1" placeholder="Password" name="password">
             </div>
+            {{#if error}}
+            <div class="alert alert-info" role="alert">
+              <span class="mr-2"><code>{{error}}</code></span>
+            </div>
+            {{/if}}
             <button type="submit" class="btn btn-primary">Sign In</button>
           </form>
         </div>
