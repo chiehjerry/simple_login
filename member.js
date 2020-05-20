@@ -1,4 +1,4 @@
-function toCheckmembership() {
+function toCheckmembership(inputMember) {
 
   // the usersDatabase
   const users = [
@@ -29,22 +29,17 @@ function toCheckmembership() {
     }
   ]
 
-  //the dummyLogin
-
-  const dummylogin = {
-    email: 'viivion@stark.com',
-    password: 'iamvivion'
-  }
 
   //using the dummylogindata to test the Logic
 
-  const isMember = users.find(user => (user.email === dummylogin.email) && (user.password === dummylogin.password))
+  const isMember = users.find(user => (user.email === inputMember.email) && (user.password === inputMember.password))
   if (isMember) {
-    console.log('Welcome!')
+    return true
   } else {
-    console.log('Username/Password錯誤')
+    return false
   }
 
 }
 
-toCheckmembership()
+// to export the toCheckmembership function to other files
+module.exports = toCheckmembership
