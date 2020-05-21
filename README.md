@@ -60,3 +60,22 @@
 * cd to the file
 * instal npm
 * you can visit this web on: http://localhost:3000
+
+## Note
+
+運用Array.prototype.find()去比對輸入進來的帳號與密碼是否符合陣列裡面的資料
+
+find() 與 filter() 很像，但 find() 只會回傳一次值，且是第一次為 true 的值。
+
+```
+//Check the inputMember
+
+  const isMember = users.find(user => (user.email === inputMember.email) && (user.password === inputMember.password))
+  if (isMember) {
+    return isMember
+  } else {
+    return false
+  }
+```
+
+資料參考：https://wcc723.github.io/javascript/2017/06/29/es6-native-array/

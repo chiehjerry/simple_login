@@ -30,7 +30,7 @@ function toCheckmembership(inputMember) {
   ]
 
 
-  //using the dummylogindata to test the Logic
+  //Check the inputMember
 
   const isMember = users.find(user => (user.email === inputMember.email) && (user.password === inputMember.password))
   if (isMember) {
